@@ -5,13 +5,16 @@ import axios from "axios";
 export const fetchLiveScores = createAsyncThunk(
   "football/fetchLiveScores",
   async () => {
-    const response = await axios.get(`/api/v3/football/fixtures`, {
-      params: {
-        api_token:
-          "L3Bn8ZB6nHmk65k5ATpOxsbK8Htf2KWzSdZ1od7yXnqYLKWUPWSPw1yE9Osf",
-      },
-    });
-    console.log(response.data.data);
+    const response = await axios.get(
+      `/api/v3/football/leagues?api_token=L3Bn8ZB6nHmk65k5ATpOxsbK8Htf2KWzSdZ1od7yXnqYLKWUPWSPw1yE9Osf`
+      //     {
+      //   params: {
+      //     api_token:
+      //       "L3Bn8ZB6nHmk65k5ATpOxsbK8Htf2KWzSdZ1od7yXnqYLKWUPWSPw1yE9Osf",
+      //   },
+      // }
+    );
+    console.log(response.data);
     return response.data.data;
   }
 );
