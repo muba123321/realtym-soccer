@@ -5,7 +5,7 @@ export default function LiveScores() {
   const liveScores = useSelector((state) => state.soccer.liveScores);
   return (
     <div className="live-scores">
-      <h2>Live Scores</h2>
+      <h2>Fixtures</h2>
       <ul>
         {/* {liveScores.map(
           (match) => (

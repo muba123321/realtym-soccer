@@ -1,22 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchLiveScores } from "../../controllers/FetchLiveScore";
+import { fetchLeagues } from "../../controllers/FetchLeagues";
 
 const soccerSlice = createSlice({
   name: "soccer",
   initialState: {
-    liveScores: [],
+    leagues: [],
     status: null,
+    pagination: {},
+  },
+  reducers: {
+    selectLeague: (state, action) => {
+      state.selectedLeague = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchLiveScores.pending, (state) => {
+      .addCase(fetchLeagues.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchLiveScores.fulfilled, (state, action) => {
-        state.liveScores = action.payload;
+      .addCase(fetchLeagues.fulfilled, (state, action) => {
+        state.leagues = [...state.leagues, ...action.payload.data];
+        state.pagination = action.payload.pagination;
         state.status = "success";
       })
-      .addCase(fetchLiveScores.rejected, (state) => {
+      .addCase(fetchLeagues.rejected, (state) => {
         state.status = "failed";
       });
   },
