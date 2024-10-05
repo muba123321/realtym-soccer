@@ -1,10 +1,10 @@
 import Header from "./components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
-// import { fetchLiveScores } from "./controllers/FetchFixtures";
-// import LiveScores from "./components/LiveScores";
 import { fetchLeagues } from "./controllers/FetchLeagues";
 import LeagueCards from "./components/LeagueCards";
+import Fixtures from "./components/Fixtures";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,15 +13,37 @@ function App() {
   );
 
   useEffect(() => {
-    dispatch(fetchLeagues());
-  }, [dispatch]);
+    if (status === "idle") {
+      dispatch(fetchLeagues());
+    }
+  }, [dispatch, status]);
 
   return (
     <div className="App">
-      <Header />
-      {status === "loading" && <p>Loading leagues...</p>}
-      {status === "success" && <LeagueCards leagues={leagues} />}
-      {/* {selectedLeague && <Fixtures leagueId={selectedLeague.id} />} */}
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {status === "loading" && <p>Loading leagues...</p>}
+                {status === "success" && <LeagueCards leagues={leagues} />}
+              </>
+            }
+          />
+          <Route
+            path="/fixtures"
+            element={
+              selectedLeague ? (
+                <Fixtures leagueId={selectedLeague.id} />
+              ) : (
+                <p>Please select a league to view fixtures.</p>
+              )
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
