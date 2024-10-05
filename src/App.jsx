@@ -5,6 +5,7 @@ import { fetchLeagues } from "./controllers/FetchLeagues";
 import LeagueCards from "./components/LeagueCards";
 import Fixtures from "./components/Fixtures";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

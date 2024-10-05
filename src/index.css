@@ -44,6 +44,7 @@ h2 {
 .fixtures ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 90px;
 }
 
 .fixtures li {
@@ -58,6 +59,7 @@ h2 {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  margin-bottom: 90px;
 }
 
 .league-card {
@@ -110,5 +112,38 @@ img {
 
 .active-nav {
   color: #61dafb;
+  text-decoration: underline;
+}
+
+.App-footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.App-footer p {
+  margin: 0;
+}
+
+.App-footer a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.App-footer a:hover {
+  text-decoration: underline;
+}
+
+.App-footer a:focus,
+.App-footer a:active {
+  outline: none;
   text-decoration: underline;
 }
