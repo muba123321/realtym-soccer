@@ -1,14 +1,14 @@
-#RealTymSoccer
+# RealTymSoccer
 RealTymSoccer is a web application that allows users to view available soccer leagues and fixtures. Built with React, Redux, and Axios, this app fetches data from a football API. Due to the limitations of the free API tier, we are only able to fetch a limited amount of data and currently rely on static fixture data.
 
-##Features
+## Features
 - View Soccer Leagues: Browse available soccer leagues.
 - Fixtures Data: Display static fixture data (due to API limitations).
 - Dynamic Navigation: Navigate between the home page and fixtures page.
 - State Management: Redux is used for managing application state.
 - Responsive Design: The UI is responsive and adapts to different screen sizes.
 
-##Tech Stack
+## Tech Stack
 - Frontend Framework: React
 - State Management: Redux Toolkit
 - API Requests: Axios
@@ -16,12 +16,12 @@ RealTymSoccer is a web application that allows users to view available soccer le
 - Build Tool: Vite
 - Styling: CSS
 
-##API Limitations
+## API Limitations
 The application uses a free-tier API to fetch soccer-related data, which comes with certain limitations:
 - Limited Data: The free API tier restricts the amount of data we can retrieve.
 - Static Fixtures: We are unable to dynamically fetch fixture data based on the selected league due to API constraints. Instead, static fixture data is used for demonstration purposes.
   
-##Getting Started
+## Getting Started
 Follow these steps to run the project locally.
 
 1. Clone the Repository
