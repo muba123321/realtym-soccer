@@ -49,7 +49,7 @@ This API token is required to fetch soccer data from the sportsmonks football AP
 
 ### Copy code
 - npm run dev
-- Open your browser and navigate to http://localhost:3000 to view the application.
+- Open your browser and navigate to your localhost to view the application.
 
 
 
